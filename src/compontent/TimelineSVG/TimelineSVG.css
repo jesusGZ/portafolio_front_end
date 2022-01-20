@@ -1,0 +1,33 @@
+.MuiTimeline-root {
+	margin-bottom: 0px;
+	padding-top: 0px !important;
+	padding-bottom: 0px !important;
+}
+
+.MuiTimelineItem-root {
+	margin-bottom: 0px;
+}
+
+.timeline .connector {
+	background-color: var(--main-color);
+}
+
+.timeline .timeline_date {
+	padding-top: 11px;
+}
+
+.timeline .timeline_title {
+	font-size: 15px;
+	font-weight: 500 !important;
+}
+
+.timeline .timeline_link {
+	font-size: 13px;
+}
+.timeline .timeline_link:hover {
+	color: var(--main-color);
+}
+
+.con .svg {
+	transform: scale(0.4);
+}
