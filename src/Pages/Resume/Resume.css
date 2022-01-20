@@ -1,0 +1,43 @@
+.aboutme_text {
+	font: small;
+	line-height: 22px !important;
+	white-space: pre-line !important;
+}
+
+/* Timeline section  */
+
+.resume_timeline .timeline_content .timeline_title {
+	font-size: 16px !important;
+	font-weight: 500 !important;
+	color: var(--main-color);
+}
+
+.resume_timeline .timeline_content .timeline_description {
+	font-size: small;
+	margin-top: 8px;
+}
+
+.skill {
+	border-radius: 8px;
+	padding: 20px;
+	height: 100%;
+	min-height: 186px;
+	box-shadow: 0px 0px 48px 0px rgba(4, 6, 4, 0.08) !important;
+}
+.skill .skill_titles {
+	font-size: 14px !important;
+	font-weight: 500 !important;
+	line-height: 35px !important;
+	text-transform: uppercase;
+}
+.skill .skill_description {
+	display: flex;
+	align-items: center;
+	font-weight: 400 !important;
+	line-height: 18px !important;
+}
+.skill .skill_description .timeline_dot {
+	border-color: var(--main-color) !important;
+	padding: 2px !important;
+	margin-right: 5px !important;
+}
