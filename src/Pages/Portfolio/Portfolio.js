@@ -1,5 +1,5 @@
 import { CardActionArea, CardContent, CardMedia, Card, Grid, Tab, Tabs, Grow, Typography, Dialog, DialogTitle, DialogContent, DialogActions } from '@material-ui/core';
-import { ImagesGallery } from '../../compontent/ImageGallery/ImageGallery';
+import { ImagesGallery } from '../../components/ImageGallery/ImageGallery';
 
 import React, { useState } from 'react';
 import resumeData from '../../utilis/resumeData';

@@ -1,17 +1,17 @@
 import { Container, Grid } from '@material-ui/core';
 import { ThemeProvider } from 'styled-components';
-import { Footer } from './compontent/Footer/Footer';
-import Header from './compontent/Header/Header';
-import Profile from './compontent/Profile/Profile.js';
+import { Footer } from './components/Footer/Footer';
+import Header from './components/Header/Header';
+import Profile from './components/Profile/Profile.js';
 import { Portfolio } from './Pages/Portfolio/Portfolio';
 import { Resume } from './Pages/Resume/Resume';
-import { GlobalStyles } from './compontent/Themes/globalStyles';
-import { useDarkMode } from './compontent/Themes/useDarkMode';
-import { lightTheme, darkTheme } from './compontent/Themes/Themes';
-import Toggle from './compontent/Themes/Toggler';
+import { GlobalStyles } from './styles/Themes/globalStyles';
+import { useDarkMode } from './styles/Themes/useDarkMode';
+import { lightTheme, darkTheme } from './styles/Themes/Themes';
+import Toggle from './styles/Themes/Toggler';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
-import './App.css';
+import './styles/index.css';
 
 function App() {
 	const [theme, themeToggler, mountedComponent] = useDarkMode();
