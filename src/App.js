@@ -12,8 +12,6 @@ import Toggle from './compontent/Themes/Toggler';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 import './App.css';
-import { connect } from 'react-redux';
-import { fetchGetUser } from './reducers/userReducer';
 
 function App() {
 	const [theme, themeToggler, mountedComponent] = useDarkMode();
@@ -53,9 +51,4 @@ function App() {
 	);
 }
 
-export default connect(
-	//función que mapea propiedades del state con propiedades del componente
-	(state) => ({ user: state.user.user }),
-	//mapeo de funciones
-	{ fetchGetUser }
-)(App);
+export default App;
