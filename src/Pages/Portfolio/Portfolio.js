@@ -26,7 +26,7 @@ export const Portfolio = () => {
 				<Grid container spacing={4}>
 					{resumeData.projects.map((project) => (
 						<>
-							{tabValue == project.tag || tabValue == 'All' ? (
+							{tabValue === project.tag || tabValue === 'All' ? (
 								<Grid item xs={12} sm={6} md={4}>
 									<Grow in timeout={1000}>
 										<Card className="customCard" onClick={() => setProjectDialog(project)}>

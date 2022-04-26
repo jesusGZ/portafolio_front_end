@@ -3,14 +3,15 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { Navbar, Nav } from 'react-bootstrap';
 import HomeIcon from '@material-ui/icons/Home';
 import GetAppIcon from '@material-ui/icons/GetApp';
-
-import { Link, NavLink, Navlink, withRouter } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import resumeData from '../../utilis/resumeData';
 import { CustomButton } from '../Button/Button';
 import './Header.css';
 
-const Header = (props) => {
-	const pathName = props.location.pathname;
+const Header = () => {
+	const location = useLocation();
+	const pathName = location.pathname;
 	return (
 		<Navbar className="header" expand="lg" sticky="top">
 			<Nav.Link as={NavLink} to="/" className="p-0 m-0">
@@ -44,4 +45,4 @@ const Header = (props) => {
 	);
 };
 
-export default withRouter(Header);
+export default Header;

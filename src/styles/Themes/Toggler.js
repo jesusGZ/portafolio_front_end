@@ -1,6 +1,6 @@
 import React from 'react';
 import { func, string } from 'prop-types';
-import styled, { css, ThemeProvider } from 'styled-components';
+import styled, { css } from 'styled-components';
 import { ReactComponent as MoonSVG } from '../../assets/logos/moon.svg';
 import { ReactComponent as SunSVG } from '../../assets/logos/sun.svg';
 

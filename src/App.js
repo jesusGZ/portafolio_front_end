@@ -1,15 +1,14 @@
 import { Container, Grid } from '@material-ui/core';
 import { ThemeProvider } from 'styled-components';
+import { BrowserRouter as Router } from 'react-router-dom';
 import { Footer } from './components/Footer/Footer';
 import Header from './components/Header/Header';
 import Profile from './components/Profile/Profile.js';
-import { Portfolio } from './Pages/Portfolio/Portfolio';
-import { Resume } from './Pages/Resume/Resume';
 import { GlobalStyles } from './styles/Themes/globalStyles';
 import { useDarkMode } from './styles/Themes/useDarkMode';
 import { lightTheme, darkTheme } from './styles/Themes/Themes';
 import Toggle from './styles/Themes/Toggler';
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import Rutas from './routes';
 
 import './styles/index.css';
 
@@ -32,14 +31,7 @@ function App() {
 							<Router>
 								<Header />
 								<div className="main_content containeer_shadow">
-									<Switch>
-										<Route path="/portfolio">
-											<Portfolio />
-										</Route>
-										<Route path="/">
-											<Resume />
-										</Route>
-									</Switch>
+									<Rutas />
 								</div>
 							</Router>
 							<Footer />

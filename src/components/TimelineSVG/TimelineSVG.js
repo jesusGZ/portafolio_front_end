@@ -9,7 +9,7 @@ import TimelineOppositeContent from '@material-ui/lab/TimelineOppositeContent';
 import TimelineDot from '@material-ui/lab/TimelineDot';
 import Paper from '@material-ui/core/Paper';
 import Typography from '@material-ui/core/Typography';
-import { Icon, Link } from '@material-ui/core';
+import { Link } from '@material-ui/core';
 import './TimelineSVG.css';
 
 const useStyles = makeStyles((theme) => ({
