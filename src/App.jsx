@@ -3,7 +3,7 @@ import { ThemeProvider } from 'styled-components';
 import { BrowserRouter as Router } from 'react-router-dom';
 import { Footer } from './components/Footer/Footer';
 import Header from './components/Header/Header';
-import Profile from './components/Profile/Profile.js';
+import Profile from './components/Profile/Profile';
 import { GlobalStyles } from './styles/Themes/globalStyles';
 import { useDarkMode } from './styles/Themes/useDarkMode';
 import { lightTheme, darkTheme } from './styles/Themes/Themes';
