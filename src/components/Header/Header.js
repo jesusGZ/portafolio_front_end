@@ -31,9 +31,9 @@ const Header = () => {
 					</Nav.Link>
 				</Nav>
 				<div className="header_right">
-					{Object.keys(resumeData.socials).map((key) => (
-						<a href={resumeData.socials[key].link} target="_blank" rel="noreferrer">
-							{resumeData.socials[key].icon}
+					{Object.keys(resumeData.socials).map((item) => (
+						<a href={resumeData.socials[item].link} target="_blank" rel="noreferrer">
+							{resumeData.socials[item].icon}
 						</a>
 					))}
 					<a href={resumeData.downloadCv} target="_blank" rel="noreferrer">
