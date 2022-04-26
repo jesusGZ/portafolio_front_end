@@ -1,14 +1,15 @@
-import { Grid, Paper, Typography } from '@material-ui/core';
-import React from 'react';
-import CustomTimeline, { CustomTimelineSeparator } from '../../components/CustomTimeline/CustomTimeline';
-import resumeData from '../../utilis/resumeData';
-import WorkIcon from '@material-ui/icons/Work';
-import SchoolIcon from '@material-ui/icons/School';
-import './Resume.css';
-import TimelineItem from '@material-ui/lab/TimelineItem';
 import TimelineContent from '@material-ui/lab/TimelineContent';
+import { Grid, Paper, Typography } from '@material-ui/core';
+import TimelineItem from '@material-ui/lab/TimelineItem';
 import TimelineDot from '@material-ui/lab/TimelineDot';
-import TimelineSVG from '../../components/TimelineSVG/TimelineSVG';
+import SchoolIcon from '@material-ui/icons/School';
+import WorkIcon from '@material-ui/icons/Work';
+import React from 'react';
+
+import CustomTimeline, { CustomTimelineSeparator } from '../../components/CustomTimeline/CustomTimeline';
+import TimelineSVG from './components/TimelineSVG/TimelineSVG';
+import resumeData from '../../utilis/resumeData';
+import './Resume.css';
 
 export const Resume = () => {
 	return (

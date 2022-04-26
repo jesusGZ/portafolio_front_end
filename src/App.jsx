@@ -8,7 +8,7 @@ import { lightTheme, darkTheme } from './styles/Themes/Themes';
 import { GlobalStyles } from './styles/Themes/globalStyles';
 import { useDarkMode } from './styles/Themes/useDarkMode';
 import { Footer } from './components/Footer/Footer';
-import Profile from './components/Profile/Profile';
+import Profile from './Pages/Profile/Profile';
 import Header from './components/Header/Header';
 import Toggle from './styles/Themes/Toggler';
 import Rutas from './routes';

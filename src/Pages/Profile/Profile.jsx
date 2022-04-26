@@ -1,5 +1,5 @@
 import React from 'react';
-import CustomTimeline, { CustomTimelineSeparator } from '../CustomTimeline/CustomTimeline';
+import CustomTimeline, { CustomTimelineSeparator } from '../../components/CustomTimeline/CustomTimeline';
 import resumeData from '../../utilis/resumeData';
 import { Typography } from '@material-ui/core';
 import TimelineItem from '@material-ui/lab/TimelineItem';
@@ -8,7 +8,7 @@ import PersonOutlineIcon from '@material-ui/icons/PersonOutline';
 import TelegramIcon from '@material-ui/icons/Telegram';
 
 import './Profile.css';
-import { CustomButton } from '../Button/Button';
+import { CustomButton } from '../../components/Button/Button';
 
 const CustomTimelineItem = ({ title, text, link }) => (
 	<TimelineItem>

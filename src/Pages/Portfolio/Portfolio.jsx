@@ -1,9 +1,10 @@
 import { CardActionArea, CardContent, CardMedia, Card, Grid, Tab, Tabs, Grow, Typography, Dialog, DialogTitle, DialogContent, DialogActions } from '@material-ui/core';
-import { ImagesGallery } from '../../components/ImageGallery/ImageGallery';
-
 import React, { useState } from 'react';
+
+import { ImagesGallery } from '../../components/ImageGallery/ImageGallery';
 import resumeData from '../../utilis/resumeData';
 import './Portfolio.css';
+
 export const Portfolio = () => {
 	const [tabValue, setTabValue] = useState('All');
 	const [projectDialog, setProjectDialog] = useState(false);
