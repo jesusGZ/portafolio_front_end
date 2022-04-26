@@ -9,7 +9,7 @@ export const Portfolio = () => {
 	const [projectDialog, setProjectDialog] = useState(false);
 
 	return (
-		<Grid container className="section pb_45 pt_45">
+		<Grid container justifyContent="flex-start" className="section pb_45 pt_45">
 			<Grid item spacing={1} className="section_title mb_20">
 				<span></span>
 				<h6 className="section_title_text">Portafolio</h6>
@@ -23,7 +23,7 @@ export const Portfolio = () => {
 				</Tabs>
 			</Grid>
 			<Grid item xs={12}>
-				<Grid container spacing={4}>
+				<Grid container justifyContent="flex-start" spacing={4}>
 					{resumeData.projects.map((project) => (
 						<>
 							{tabValue === project.tag || tabValue === 'All' ? (

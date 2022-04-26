@@ -13,7 +13,7 @@ import TimelineSVG from '../../components/TimelineSVG/TimelineSVG';
 export const Resume = () => {
 	return (
 		<>
-			<Grid container className="section pb_45 pt_45">
+			<Grid container justifyContent="flex-start" className="section pb_45 pt_45">
 				<Grid item className="section_title mb_30">
 					<span></span>
 					<h6 className="section_title_text">Hacerca de mí</h6>
@@ -24,12 +24,12 @@ export const Resume = () => {
 					</Typography>
 				</Grid>
 			</Grid>
-			<Grid container className="section pb_45">
+			<Grid container justifyContent="flex-start" className="section pb_45">
 				<Grid item className="section_title mb_30">
 					<span></span>
 					<h6 className="section_title_text">Preparación</h6>
 				</Grid>
-				<Grid container className="resume_timeline">
+				<Grid container justifyContent="flex-start" className="resume_timeline">
 					<Grid item xs={12} sm={6}>
 						<CustomTimeline title="Experiencia Laboral" icon={<WorkIcon />}>
 							{resumeData.experiences.map((exp) => (
@@ -64,12 +64,12 @@ export const Resume = () => {
 					</Grid>
 				</Grid>
 			</Grid>
-			<Grid container className="section ">
+			<Grid container justifyContent="flex-start" className="section ">
 				<Grid item className="section_title section">
 					<span></span>
 					<h6 className="section_title_text">Habilidades</h6>
 				</Grid>
-				<Grid container spacing={3} justify="space-between" className="section pb_45 pt_25">
+				<Grid container justifyContent="flex-start" spacing={3} justify="space-between" className="section pb_45 pt_25">
 					{resumeData.skills.map((skill) => (
 						<Grid item xs={12} sm={6} md={3} lg={3}>
 							<Paper elevation={0} className="skill">
@@ -87,12 +87,12 @@ export const Resume = () => {
 					))}
 				</Grid>
 			</Grid>
-			<Grid container className="section pb_10 ">
+			<Grid container justifyContent="flex-start" className="section pb_10 ">
 				<Grid item className="section_title section ">
 					<span></span>
 					<h6 className="section_title_text ">Cursos</h6>
 				</Grid>
-				<Grid container className="pt_25 ">
+				<Grid container justifyContent="flex-start" className="pt_25 ">
 					<Grid item xs={12}>
 						{resumeData.certifications.map((cert) => (
 							<TimelineSVG side={cert.side} title={cert.title} date={cert.date} organization={cert.organization} link={cert.link} />
