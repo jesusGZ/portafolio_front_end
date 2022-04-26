@@ -14,19 +14,21 @@ export default {
 	adress: 'Guanajuato',
 	downloadCv: '',
 
-	socials: {
-		Linkedin: {
-			link: 'https://www.linkedin.com/in/jes%C3%BAs-antonio-garc%C3%ADa-zurita-85b3941a9/',
-			icon: LinkedInIcon,
-			text: 'Linkedin',
-		},
+	socials: [
+		{
+			Linkedin: {
+				link: 'https://www.linkedin.com/in/jes%C3%BAs-antonio-garc%C3%ADa-zurita-85b3941a9/',
+				icon: LinkedInIcon,
+				text: 'Linkedin',
+			},
 
-		Github: {
-			link: 'https://github.com/jesusGZ',
-			icon: GitHubIcon,
-			text: 'Github',
+			Github: {
+				link: 'https://github.com/jesusGZ',
+				icon: GitHubIcon,
+				text: 'Github',
+			},
 		},
-	},
+	],
 
 	about: 'fghjikojuytfdghvjbknjuythgbjnkmikoijuhyjhjujbhuijoubjhujhj',
 

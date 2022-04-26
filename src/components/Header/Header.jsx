@@ -13,7 +13,7 @@ const Header = () => {
 	const location = useLocation();
 
 	const pathName = location.pathname;
-
+	const social = resumeData.socials;
 	return (
 		<Navbar className="header" expand="lg" sticky="top">
 			<Nav.Link as={NavLink} to="/" className="p-0 m-0">
@@ -33,11 +33,13 @@ const Header = () => {
 					</Nav.Link>
 				</Nav>
 				<div className="header_right">
-					{Object.keys(resumeData.socials).map((item) => (
-						<a href={resumeData.socials[item].link} target="_blank" rel="noreferrer">
-							{resumeData.socials[item].icon}
-						</a>
-					))}
+					{social.map((item) => {
+						return [
+							<a href={item.link} target="_blank" rel="noreferrer">
+								{item.icon}
+							</a>,
+						];
+					})}
 					<a href={resumeData.downloadCv} target="_blank" rel="noreferrer">
 						<CustomButton text={'Descargar CV'} icon={<GetAppIcon />} />
 					</a>

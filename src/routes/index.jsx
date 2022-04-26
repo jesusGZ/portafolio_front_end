@@ -9,7 +9,7 @@ const Rutas = () => {
 		<div>
 			<Routes>
 				<Route path="/">
-					{/* <Route index element={<Resume />} /> */}
+					<Route index element={<Resume />} />
 					<Route path="/" element={<Resume />} />
 					<Route path="/portfolio" element={<Portfolio />} />
 				</Route>
