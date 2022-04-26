@@ -11,7 +11,9 @@ import './Header.css';
 
 const Header = () => {
 	const location = useLocation();
+
 	const pathName = location.pathname;
+
 	return (
 		<Navbar className="header" expand="lg" sticky="top">
 			<Nav.Link as={NavLink} to="/" className="p-0 m-0">

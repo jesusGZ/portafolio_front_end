@@ -17,13 +17,13 @@ export default {
 	socials: {
 		Linkedin: {
 			link: 'https://www.linkedin.com/in/jes%C3%BAs-antonio-garc%C3%ADa-zurita-85b3941a9/',
-			icon: <LinkedInIcon />,
+			icon: LinkedInIcon,
 			text: 'Linkedin',
 		},
 
 		Github: {
 			link: 'https://github.com/jesusGZ',
-			icon: <GitHubIcon />,
+			icon: GitHubIcon,
 			text: 'Github',
 		},
 	},
@@ -136,10 +136,10 @@ export default {
 			caption: 'Arduino based self balancing robot',
 			description: 'Project of 4th Year University',
 			links: [
-				{ link: 'https://youtu.be/0bnQlZczCOw', icon: <YouTubeIcon /> },
+				{ link: 'https://youtu.be/0bnQlZczCOw', icon: YouTubeIcon },
 				{
 					link: 'https://github.com/mahowik/BalancingWii',
-					icon: <GitHubIcon />,
+					icon: GitHubIcon,
 				},
 			],
 		},
@@ -152,7 +152,7 @@ export default {
 			links: [
 				{
 					link: 'https://rh.tejiendoweb.mx/',
-					icon: <LinkIcon />,
+					icon: LinkIcon,
 				},
 			],
 		},
@@ -165,7 +165,7 @@ export default {
 			links: [
 				{
 					link: 'https://github.com/heisenberg550/react-resume-clone',
-					icon: <LinkIcon />,
+					icon: LinkIcon,
 				},
 			],
 		},
@@ -178,7 +178,7 @@ export default {
 			links: [
 				{
 					link: 'https://github.com/heisenberg550/PhotoGallery',
-					icon: <GitHubIcon />,
+					icon: GitHubIcon,
 				},
 			],
 		},
@@ -191,7 +191,7 @@ export default {
 			links: [
 				{
 					link: 'https://github.com/heisenberg550/trainingProjects/tree/main/Countdown-Timer',
-					icon: <GitHubIcon />,
+					icon: GitHubIcon,
 				},
 			],
 		},

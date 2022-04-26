@@ -25,6 +25,7 @@ const Toggle = ({ theme, toggleTheme }) => {
 	}
 	return <SunIcon onClick={toggleTheme} />;
 };
+
 Toggle.propTypes = {
 	theme: string.isRequired,
 	toggleTheme: func.isRequired,

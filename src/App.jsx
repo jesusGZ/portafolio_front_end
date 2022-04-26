@@ -1,3 +1,4 @@
+import React from 'react';
 import { Container, Grid } from '@material-ui/core';
 import { ThemeProvider } from 'styled-components';
 import { BrowserRouter as Router } from 'react-router-dom';
@@ -19,26 +20,24 @@ function App() {
 	if (!mountedComponent) return <div />;
 	return (
 		<ThemeProvider theme={themeMode}>
-			<>
-				<GlobalStyles />
-				<Container maxWidth="xl" className="top_60">
-					<Toggle theme={theme} toggleTheme={themeToggler} />
-					<Grid container spacing={6}>
-						<Grid item xs={12} sm={12} md={4} lg={3}>
-							<Profile></Profile>
-						</Grid>
-						<Grid item xs>
-							<Router>
-								<Header />
-								<div className="main_content containeer_shadow">
-									<Rutas />
-								</div>
-							</Router>
-							<Footer />
-						</Grid>
+			<GlobalStyles />
+			<Container maxWidth="xl" className="top_60">
+				<Toggle theme={theme} toggleTheme={themeToggler} />
+				<Grid container spacing={6}>
+					<Grid item xs={12} sm={12} md={4} lg={3}>
+						<Profile></Profile>
 					</Grid>
-				</Container>
-			</>
+					<Grid item xs>
+						<Router>
+							<Header />
+							<div className="main_content containeer_shadow">
+								<Rutas />
+							</div>
+						</Router>
+						<Footer />
+					</Grid>
+				</Grid>
+			</Container>
 		</ThemeProvider>
 	);
 }
