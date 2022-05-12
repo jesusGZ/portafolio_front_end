@@ -59,9 +59,7 @@ export const Portfolio = () => {
 					<Typography className="projectDialog_description">{projectDialog.description}</Typography>
 					<DialogActions className="projectDialog_action">
 						{projectDialog?.links?.map((link) => (
-							<a href={link.link} target="_blank" className="projectDialog_icon" rel="noreferrer">
-								{link.icon}
-							</a>
+							<a href={link.link} target="_blank" className="projectDialog_icon" rel="noreferrer"></a>
 						))}
 					</DialogActions>
 				</DialogContent>
