@@ -13,3 +13,16 @@ export async function userInfo(id) {
 		return error;
 	}
 }
+
+export async function userLogin(user, password) {
+	try {
+		const headers = { 'Content-Type': 'application/json' };
+		const body = JSON.stringify(user, password);
+		const response = await fetch(`${CONEXION_BASE}${PORT}/user/login`, { method: 'GET', mode: 'cors', headers: headers, body: body });
+
+		const data = await response.json();
+		return data;
+	} catch (error) {
+		return error;
+	}
+}
