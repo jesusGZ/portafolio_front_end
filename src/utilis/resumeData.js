@@ -132,6 +132,7 @@ export default {
 
 	projects: [
 		{
+			id: 1,
 			tag: 'Github',
 			images: ['https://i.ibb.co/F3mhZWM/photo-2020-12-29-15-48-10.jpg', 'https://i.ibb.co/Ptc9gdx/photo-2020-12-28-21-18-32.jpg', 'https://i.ibb.co/Nr8rQ62/photo-2020-12-27-14-27-10.jpg'],
 			title: 'Self balancing robot',
@@ -146,6 +147,7 @@ export default {
 			],
 		},
 		{
+			id: 2,
 			tag: 'Github',
 			images: ['https://i.ibb.co/xJZhszG/Captura-de-Pantalla-2021-11-05-a-la-s-15-37-50.png'],
 			title: 'EXÁMENES DE SELECCIÓN TEJIENDO WEB',
@@ -159,6 +161,7 @@ export default {
 			],
 		},
 		{
+			id: 3,
 			tag: 'React',
 			images: ['https://i.ibb.co/FWr7QHk/Annotation-2021-08-22-231400.png'],
 			title: 'Resume Web Page',
@@ -172,6 +175,7 @@ export default {
 			],
 		},
 		{
+			id: 4,
 			tag: 'React',
 			images: ['https://i.ibb.co/zfM9Svx/Annotation-2021-08-22-234126.png', 'https://i.ibb.co/2hb0sPV/Annotation-2021-08-22-234236.png'],
 			title: 'Photo Gallery',
@@ -185,6 +189,7 @@ export default {
 			],
 		},
 		{
+			id: 5,
 			tag: 'JavaScript',
 			images: ['https://i.ibb.co/Gkw4JX5/Annotation-2021-08-22-232757.png'],
 			title: 'CountDown Timer',
