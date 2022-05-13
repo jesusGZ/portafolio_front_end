@@ -1,14 +1,19 @@
-import React from 'react';
-import CustomTimeline, { CustomTimelineSeparator } from '../../components/CustomTimeline/CustomTimeline';
-import resumeData from '../../utilis/resumeData';
-import { Typography } from '@material-ui/core';
-import TimelineItem from '@material-ui/lab/TimelineItem';
-import TimelineContent from '@material-ui/lab/TimelineContent';
 import PersonOutlineIcon from '@material-ui/icons/PersonOutline';
+import TimelineContent from '@material-ui/lab/TimelineContent';
+import TimelineItem from '@material-ui/lab/TimelineItem';
 import TelegramIcon from '@material-ui/icons/Telegram';
+import { Typography } from '@material-ui/core';
+import React, { useState, useEffect } from 'react';
+
+import CustomTimeline, { CustomTimelineSeparator } from '../../components/CustomTimeline/CustomTimeline';
+import { CustomButton } from '../../components/Button/Button';
+import resumeData from '../../utilis/resumeData';
+import { userInfo } from '../../services/user';
+import constants from '../../constants';
+
+const { USER_ID } = constants;
 
 import './Profile.css';
-import { CustomButton } from '../../components/Button/Button';
 
 const CustomTimelineItem = ({ title, text, link }) => (
 	<TimelineItem>
@@ -31,10 +36,32 @@ const CustomTimelineItem = ({ title, text, link }) => (
 );
 
 const Profile = () => {
+	const [dataUser, setDataUser] = useState({});
+
+	const handleUserInfo = async () => {
+		try {
+			const data = await userInfo(USER_ID);
+
+			if (data.status !== 'success') return data.message;
+
+			const { nombre, email, user, telefono } = data.data;
+
+			return setDataUser({ nombre, email, user, telefono });
+		} catch (error) {
+			console.log(error);
+			//error
+			return;
+		}
+	};
+
+	useEffect(() => {
+		handleUserInfo();
+	}, []);
+
 	return (
 		<div className="profile containeer_shadow">
 			<div className="profile_name">
-				<Typography className="name">{resumeData.name}</Typography>
+				<Typography className="name">{dataUser.nombre}</Typography>
 				<Typography className="title">{resumeData.title}</Typography>
 			</div>
 
@@ -46,9 +73,9 @@ const Profile = () => {
 
 			<div className="profile_information">
 				<CustomTimeline icon={<PersonOutlineIcon />}>
-					<CustomTimelineItem title="Nombre" text={resumeData.name} />
+					<CustomTimelineItem title="Nombre" text={dataUser.nombre} />
 					<CustomTimelineItem title="Ocupación" text={resumeData.title} />
-					<CustomTimelineItem title="Correo" text={<a href={'mailto:' + resumeData.email}>{resumeData.email}</a>} />
+					<CustomTimelineItem title="Correo" text={<a href={'mailto:' + dataUser.email}>{dataUser.email}</a>} />
 					<CustomTimelineItem title="Dirección" text={resumeData.adress} />
 				</CustomTimeline>
 				<br />
