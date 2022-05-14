@@ -1,17 +1,44 @@
+import React, { useState, useEffect } from 'react';
+
 import TimelineContent from '@material-ui/lab/TimelineContent';
 import { Grid, Paper, Typography } from '@material-ui/core';
 import TimelineItem from '@material-ui/lab/TimelineItem';
 import TimelineDot from '@material-ui/lab/TimelineDot';
 import SchoolIcon from '@material-ui/icons/School';
 import WorkIcon from '@material-ui/icons/Work';
-import React from 'react';
 
 import CustomTimeline, { CustomTimelineSeparator } from '../../components/CustomTimeline/CustomTimeline';
+import { certificationsInfo } from '../../services/certifications';
 import TimelineSVG from './components/TimelineSVG/TimelineSVG';
 import resumeData from '../../utilis/resumeData';
+import constants from '../../constants';
+
+const { USER_ID } = constants;
+
 import './Resume.css';
 
 export const Resume = () => {
+	const [dataCertifications, setDataCertifications] = useState([]);
+
+	const handleCertificationsInfo = async () => {
+		try {
+			const data = await certificationsInfo(USER_ID);
+
+			if (data.status !== 'success') return data.message;
+
+			console.log(data.data);
+			return setDataCertifications(data.data);
+		} catch (error) {
+			console.log(error);
+			//error
+			return;
+		}
+	};
+
+	useEffect(() => {
+		handleCertificationsInfo();
+	}, []);
+
 	return (
 		<>
 			<Grid container justifyContent="flex-start" className="section pb_45 pt_45">
@@ -94,11 +121,11 @@ export const Resume = () => {
 					<h6 className="section_title_text ">Cursos</h6>
 				</Grid>
 				<Grid container justifyContent="flex-start" className="pt_25 ">
-					<Grid item xs={12}>
-						{resumeData.certifications.map((cert) => (
-							<TimelineSVG side={cert.side} title={cert.title} date={cert.date} organization={cert.organization} link={cert.link} />
-						))}
-					</Grid>
+					{/* <Grid item xs={12}>
+						{dataCertifications.map((cert) => {
+							return <TimelineSVG side={''} title={cert.titulo} date={cert.fecha_} organization={cert.organizacion} link={cert.link} />;
+						})}
+					</Grid> */}
 				</Grid>
 			</Grid>
 		</>
