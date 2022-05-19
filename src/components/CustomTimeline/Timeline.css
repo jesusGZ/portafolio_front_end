@@ -30,9 +30,9 @@
 	padding: 2px !important;
 }
 
-/* .timeline .MuiTimelineConnector-root {
+.timeline .MuiTimelineConnector-root {
 	background-color: #eee;
-} */
+}
 
 .timeline .timeline_dot_header > .MuiSvgIcon-root {
 	font-size: 20px;

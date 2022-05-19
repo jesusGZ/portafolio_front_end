@@ -1,17 +1,75 @@
+import React, { useState, useEffect } from 'react';
+
 import TimelineContent from '@material-ui/lab/TimelineContent';
 import { Grid, Paper, Typography } from '@material-ui/core';
 import TimelineItem from '@material-ui/lab/TimelineItem';
 import TimelineDot from '@material-ui/lab/TimelineDot';
 import SchoolIcon from '@material-ui/icons/School';
 import WorkIcon from '@material-ui/icons/Work';
-import React from 'react';
 
 import CustomTimeline, { CustomTimelineSeparator } from '../../components/CustomTimeline/CustomTimeline';
+import { certificationsInfo } from '../../services/certifications';
+import { educationInfo } from '../../services/education';
 import TimelineSVG from './components/TimelineSVG/TimelineSVG';
 import resumeData from '../../utilis/resumeData';
+import constants from '../../constants';
+
+const { USER_ID } = constants;
+
 import './Resume.css';
 
 export const Resume = () => {
+	const [dataCertifications, setDataCertifications] = useState([]);
+	const [dataEducation, setDataEducation] = useState([]);
+
+	const handleEducationInfo = async () => {
+		try {
+			const data = await educationInfo(USER_ID);
+
+			if (data.status !== 'success') return data.message;
+
+			return setDataEducation(data.data);
+		} catch (error) {
+			console.log(error);
+			//error
+			return;
+		}
+	};
+
+	const handleCertificationsInfo = async () => {
+		try {
+			const data = await certificationsInfo(USER_ID);
+
+			if (data.status !== 'success') return data.message;
+
+			return setDataCertifications(data.data);
+		} catch (error) {
+			console.log(error);
+			//error
+			return;
+		}
+	};
+
+	function certifications() {
+		let position = 0;
+
+		const timeline_certifications = dataCertifications.map((cert) => {
+			position = position + 1;
+
+			// asignacion de posicionamiento en la linea de tiempo
+			position % 2 == 0 ? (cert.side = 'left') : (cert.side = 'right');
+
+			return <TimelineSVG key={cert._id} side={cert.side} title={cert.titulo} date={cert.fecha_} organization={cert.organizacion} link={cert.link} />;
+		});
+
+		return timeline_certifications;
+	}
+
+	useEffect(() => {
+		if (dataCertifications.length === 0) handleCertificationsInfo();
+		if (dataEducation.length === 0) handleEducationInfo();
+	}, []);
+
 	return (
 		<>
 			<Grid container justifyContent="flex-start" className="section pb_45 pt_45">
@@ -49,15 +107,15 @@ export const Resume = () => {
 					</Grid>
 					<Grid item xs={12} sm={6}>
 						<CustomTimeline title="Educación" icon={<SchoolIcon />}>
-							{resumeData.education.map((edu) => (
+							{dataEducation.map((edu) => (
 								<TimelineItem>
 									<CustomTimelineSeparator />
 									<TimelineContent className="timeline_content">
-										<Typography className="timeline_title">{edu.title}</Typography>
+										<Typography className="timeline_title">{edu.institucion}</Typography>
 										<Typography variant="caption" className="timeline_date">
-											{edu.date}
+											{edu.periodo}
 										</Typography>
-										<Typography className="timeline_description">{edu.description}</Typography>
+										<Typography className="timeline_description">{edu.especialidad}</Typography>
 									</TimelineContent>
 								</TimelineItem>
 							))}
@@ -95,9 +153,7 @@ export const Resume = () => {
 				</Grid>
 				<Grid container justifyContent="flex-start" className="pt_25 ">
 					<Grid item xs={12}>
-						{resumeData.certifications.map((cert) => (
-							<TimelineSVG side={cert.side} title={cert.title} date={cert.date} organization={cert.organization} link={cert.link} />
-						))}
+						{certifications()}
 					</Grid>
 				</Grid>
 			</Grid>
