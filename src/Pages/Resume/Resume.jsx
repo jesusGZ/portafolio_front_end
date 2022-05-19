@@ -9,6 +9,7 @@ import WorkIcon from '@material-ui/icons/Work';
 
 import CustomTimeline, { CustomTimelineSeparator } from '../../components/CustomTimeline/CustomTimeline';
 import { certificationsInfo } from '../../services/certifications';
+import { educationInfo } from '../../services/education';
 import TimelineSVG from './components/TimelineSVG/TimelineSVG';
 import resumeData from '../../utilis/resumeData';
 import constants from '../../constants';
@@ -19,6 +20,21 @@ import './Resume.css';
 
 export const Resume = () => {
 	const [dataCertifications, setDataCertifications] = useState([]);
+	const [dataEducation, setDataEducation] = useState([]);
+
+	const handleEducationInfo = async () => {
+		try {
+			const data = await educationInfo(USER_ID);
+
+			if (data.status !== 'success') return data.message;
+
+			return setDataEducation(data.data);
+		} catch (error) {
+			console.log(error);
+			//error
+			return;
+		}
+	};
 
 	const handleCertificationsInfo = async () => {
 		try {
@@ -51,6 +67,7 @@ export const Resume = () => {
 
 	useEffect(() => {
 		if (dataCertifications.length === 0) handleCertificationsInfo();
+		if (dataEducation.length === 0) handleEducationInfo();
 	}, []);
 
 	return (
@@ -90,15 +107,15 @@ export const Resume = () => {
 					</Grid>
 					<Grid item xs={12} sm={6}>
 						<CustomTimeline title="Educación" icon={<SchoolIcon />}>
-							{resumeData.education.map((edu) => (
+							{dataEducation.map((edu) => (
 								<TimelineItem>
 									<CustomTimelineSeparator />
 									<TimelineContent className="timeline_content">
-										<Typography className="timeline_title">{edu.title}</Typography>
+										<Typography className="timeline_title">{edu.institucion}</Typography>
 										<Typography variant="caption" className="timeline_date">
-											{edu.date}
+											{edu.periodo}
 										</Typography>
-										<Typography className="timeline_description">{edu.description}</Typography>
+										<Typography className="timeline_description">{edu.especialidad}</Typography>
 									</TimelineContent>
 								</TimelineItem>
 							))}
