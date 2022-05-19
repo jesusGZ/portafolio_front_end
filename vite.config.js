@@ -3,6 +3,10 @@ import reactRefresh from '@vitejs/plugin-react-refresh';
 import svgr from 'vite-plugin-svgr';
 
 export default defineConfig({
-	base: '/',
+	build: { outDir: 'dist', assetsDir: 'assets' },
 	plugins: [reactRefresh(), svgr()],
+	server: { open: '/' },
+	publicDir: 'public',
+	root: './',
+	base: '/',
 });
