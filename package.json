@@ -34,7 +34,8 @@
 		"start": "vite",
 		"build": "vite build",
 		"serve": "vite preview",
-		"deploy": "gh-pages -d build -r https://$GH_TOKEN@github.com/jesusGZ/portafolio_front_end"
+		"predeploy": "npm run build",
+		"deploy": "gh-pages -d build"
 	},
 	"eslintConfig": {
 		"extends": [
@@ -54,5 +55,5 @@
 			"last 1 safari version"
 		]
 	},
-	"homepage": "/"
+	"homepage": "http://jesusgz.github.io/portafolio_front_end/"
 }
