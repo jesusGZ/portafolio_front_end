@@ -55,7 +55,7 @@ const Profile = () => {
 	};
 
 	useEffect(() => {
-		handleUserInfo();
+		if (Object.keys(dataUser).length === 0) handleUserInfo();
 	}, []);
 
 	return (
