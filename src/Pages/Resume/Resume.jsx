@@ -26,7 +26,6 @@ export const Resume = () => {
 
 			if (data.status !== 'success') return data.message;
 
-			console.log(data.data);
 			return setDataCertifications(data.data);
 		} catch (error) {
 			console.log(error);
@@ -35,8 +34,23 @@ export const Resume = () => {
 		}
 	};
 
+	function certifications() {
+		let position = 0;
+
+		const timeline_certifications = dataCertifications.map((cert) => {
+			position = position + 1;
+
+			// asignacion de posicionamiento en la linea de tiempo
+			position % 2 == 0 ? (cert.side = 'left') : (cert.side = 'right');
+
+			return <TimelineSVG key={cert._id} side={cert.side} title={cert.titulo} date={cert.fecha_} organization={cert.organizacion} link={cert.link} />;
+		});
+
+		return timeline_certifications;
+	}
+
 	useEffect(() => {
-		handleCertificationsInfo();
+		if (dataCertifications.length === 0) handleCertificationsInfo();
 	}, []);
 
 	return (
@@ -121,11 +135,9 @@ export const Resume = () => {
 					<h6 className="section_title_text ">Cursos</h6>
 				</Grid>
 				<Grid container justifyContent="flex-start" className="pt_25 ">
-					{/* <Grid item xs={12}>
-						{dataCertifications.map((cert) => {
-							return <TimelineSVG side={''} title={cert.titulo} date={cert.fecha_} organization={cert.organizacion} link={cert.link} />;
-						})}
-					</Grid> */}
+					<Grid item xs={12}>
+						{certifications()}
+					</Grid>
 				</Grid>
 			</Grid>
 		</>
