@@ -8,5 +8,5 @@ Portafolio personal desarrollado bajo el estack MERN.
 
 ```
 $ npm install
-$ npm run start
+$ npm run dev
 ```
