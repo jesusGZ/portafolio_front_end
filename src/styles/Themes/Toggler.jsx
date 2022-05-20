@@ -1,6 +1,7 @@
 import React from 'react';
 import { func, string } from 'prop-types';
 import styled, { css } from 'styled-components';
+
 import { ReactComponent as MoonSVG } from '../../assets/logos/moon.svg';
 import { ReactComponent as SunSVG } from '../../assets/logos/sun.svg';
 
@@ -20,14 +21,11 @@ const SunIcon = styled(SunSVG)`
 `;
 
 const Toggle = ({ theme, toggleTheme }) => {
-	if (theme === 'light') {
-		return <MoonIcon onClick={toggleTheme} />;
-	}
+	if (theme === 'light') return <MoonIcon onClick={toggleTheme} />;
+
 	return <SunIcon onClick={toggleTheme} />;
 };
 
-Toggle.propTypes = {
-	theme: string.isRequired,
-	toggleTheme: func.isRequired,
-};
+Toggle.propTypes = { theme: string.isRequired, toggleTheme: func.isRequired };
+
 export default Toggle;
